@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B7CC44FF165E7E5BD36AF20 /* Pods_TestMacOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B900FF89A548567B04263A /* Pods_TestMacOSApp.framework */; };
 		86812BE62551482A00DA799A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86812BE52551482A00DA799A /* AppDelegate.swift */; };
 		86812BE82551482A00DA799A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86812BE72551482A00DA799A /* ViewController.swift */; };
 		86812BEB2551482A00DA799A /* TestMacOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86812BE92551482A00DA799A /* TestMacOSApp.xcdatamodeld */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C7E8796748F58D93ADF117A /* Pods-TestMacOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMacOSApp.release.xcconfig"; path = "Target Support Files/Pods-TestMacOSApp/Pods-TestMacOSApp.release.xcconfig"; sourceTree = "<group>"; };
+		73B900FF89A548567B04263A /* Pods_TestMacOSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestMacOSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86812BE22551482A00DA799A /* TestMacOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMacOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86812BE52551482A00DA799A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86812BE72551482A00DA799A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,6 +26,7 @@
 		86812BEF2551482E00DA799A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86812BF12551482E00DA799A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86812BF22551482E00DA799A /* TestMacOSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestMacOSApp.entitlements; sourceTree = "<group>"; };
+		BAA03B4F68442768C224DB9D /* Pods-TestMacOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMacOSApp.debug.xcconfig"; path = "Target Support Files/Pods-TestMacOSApp/Pods-TestMacOSApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +34,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B7CC44FF165E7E5BD36AF20 /* Pods_TestMacOSApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072ECCCCCFEE17F1ECC0752F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73B900FF89A548567B04263A /* Pods_TestMacOSApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		10FA4177168C681B294DC91B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAA03B4F68442768C224DB9D /* Pods-TestMacOSApp.debug.xcconfig */,
+				4C7E8796748F58D93ADF117A /* Pods-TestMacOSApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		86812BD92551482A00DA799A = {
 			isa = PBXGroup;
 			children = (
 				86812BE42551482A00DA799A /* TestMacOSApp */,
 				86812BE32551482A00DA799A /* Products */,
+				10FA4177168C681B294DC91B /* Pods */,
+				072ECCCCCFEE17F1ECC0752F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86812BF52551482E00DA799A /* Build configuration list for PBXNativeTarget "TestMacOSApp" */;
 			buildPhases = (
+				6250C5BE92FE912F9938218A /* [CP] Check Pods Manifest.lock */,
 				86812BDE2551482A00DA799A /* Sources */,
 				86812BDF2551482A00DA799A /* Frameworks */,
 				86812BE02551482A00DA799A /* Resources */,
+				496730DB9B126E0284B7405F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		496730DB9B126E0284B7405F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMacOSApp/Pods-TestMacOSApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMacOSApp/Pods-TestMacOSApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestMacOSApp/Pods-TestMacOSApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6250C5BE92FE912F9938218A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestMacOSApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		86812BDE2551482A00DA799A /* Sources */ = {
@@ -271,6 +340,7 @@
 		};
 		86812BF62551482E00DA799A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAA03B4F68442768C224DB9D /* Pods-TestMacOSApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TestMacOSApp/TestMacOSApp.entitlements;
@@ -290,6 +360,7 @@
 		};
 		86812BF72551482E00DA799A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C7E8796748F58D93ADF117A /* Pods-TestMacOSApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TestMacOSApp/TestMacOSApp.entitlements;
