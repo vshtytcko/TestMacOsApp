@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="eZ7-B0-RJl">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Source View Controller-->
+        <scene sceneID="m3v-WY-Kwg">
+            <objects>
+                <viewController id="eZ7-B0-RJl" customClass="SourceViewController" customModule="TestMacOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Js1-6T-B0K">
+                        <rect key="frame" x="0.0" y="0.0" width="558" height="112"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bka-IY-Tsu">
+                                <rect key="frame" x="8" y="7" width="542" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="R3S-DI-u1X"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="s5I-hF-VYb"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" title="Collection" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1P6-fQ-HMA">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="collectionButtonPressed:" target="eZ7-B0-RJl" id="QhU-yD-3BI"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FcD-ZZ-9jO">
+                                <rect key="frame" x="8" y="55" width="542" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="GJv-In-6gx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="NAG-HL-H7X"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" title="Table" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fQh-Oa-ma1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="tableButtonPressed:" target="eZ7-B0-RJl" id="yF8-qU-2CF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="FcD-ZZ-9jO" firstAttribute="leading" secondItem="Js1-6T-B0K" secondAttribute="leading" constant="8" id="0pm-5o-JI7"/>
+                            <constraint firstItem="Bka-IY-Tsu" firstAttribute="leading" secondItem="Js1-6T-B0K" secondAttribute="leading" constant="8" id="1Dg-ED-L6c"/>
+                            <constraint firstAttribute="trailing" secondItem="Bka-IY-Tsu" secondAttribute="trailing" constant="8" id="Hn2-qA-76M"/>
+                            <constraint firstItem="Bka-IY-Tsu" firstAttribute="top" secondItem="FcD-ZZ-9jO" secondAttribute="bottom" constant="8" id="bov-Cb-b8X"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bka-IY-Tsu" secondAttribute="bottom" constant="8" id="cQU-kB-0c2"/>
+                            <constraint firstAttribute="trailing" secondItem="FcD-ZZ-9jO" secondAttribute="trailing" constant="8" id="ph9-mJ-EeG"/>
+                            <constraint firstItem="FcD-ZZ-9jO" firstAttribute="top" secondItem="Js1-6T-B0K" secondAttribute="top" constant="16" id="s63-J3-rPU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionButton" destination="Bka-IY-Tsu" id="UKa-FI-3WV"/>
+                        <outlet property="tableButton" destination="FcD-ZZ-9jO" id="rTI-yS-7cU"/>
+                    </connections>
+                </viewController>
+                <customObject id="ElI-xS-YrI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-459" y="1196"/>
+        </scene>
+    </scenes>
+</document>

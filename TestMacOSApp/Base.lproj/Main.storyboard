@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -679,7 +678,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="-64"/>
+            <point key="canvasLocation" x="56" y="-47"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -695,196 +694,20 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="ml5-T9-0iq" kind="relationship" relationship="window.shadowedContentViewController" id="Q10-UB-PRT"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="183"/>
+            <point key="canvasLocation" x="58" y="181"/>
         </scene>
-        <!--Split View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Split-->
+        <scene sceneID="R3U-Zm-f4H">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="SplitViewController" customModule="TestMacOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="500"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-tK-pUl">
-                                <rect key="frame" x="0.0" y="0.0" width="1000" height="500"/>
-                                <subviews>
-                                    <customView id="Yhh-Vr-e8G">
-                                        <rect key="frame" x="0.0" y="0.0" width="326" height="500"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <subviews>
-                                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Jg4-TH-rG1">
-                                                <rect key="frame" x="0.0" y="0.0" width="326" height="500"/>
-                                                <connections>
-                                                    <segue destination="gik-R0-SQR" kind="embed" id="yTa-OC-de2"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Jg4-TH-rG1" secondAttribute="bottom" id="FNd-hV-VwA"/>
-                                            <constraint firstItem="Jg4-TH-rG1" firstAttribute="top" secondItem="Yhh-Vr-e8G" secondAttribute="top" id="YiG-y7-cQ7"/>
-                                            <constraint firstAttribute="trailing" secondItem="Jg4-TH-rG1" secondAttribute="trailing" id="ZdW-ke-EcQ"/>
-                                            <constraint firstItem="Jg4-TH-rG1" firstAttribute="leading" secondItem="Yhh-Vr-e8G" secondAttribute="leading" id="blv-lz-ave"/>
-                                        </constraints>
-                                    </customView>
-                                    <containerView fixedFrame="YES" id="yzN-eF-VGw">
-                                        <rect key="frame" x="327" y="0.0" width="331" height="500"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <connections>
-                                            <segue destination="UZy-Tc-tvs" kind="embed" id="DDs-J3-mP4"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView fixedFrame="YES" id="sAk-p1-Cq8">
-                                        <rect key="frame" x="659" y="0.0" width="341" height="500"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <connections>
-                                            <segue destination="h61-fb-eon" kind="embed" id="GT7-qH-go2"/>
-                                        </connections>
-                                    </containerView>
-                                </subviews>
-                                <holdingPriorities>
-                                    <real value="250"/>
-                                    <real value="250"/>
-                                    <real value="250"/>
-                                </holdingPriorities>
-                            </splitView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="o6J-tK-pUl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="2Dt-Xl-yQo"/>
-                            <constraint firstAttribute="trailing" secondItem="o6J-tK-pUl" secondAttribute="trailing" id="dxI-uo-tvV"/>
-                            <constraint firstAttribute="bottom" secondItem="o6J-tK-pUl" secondAttribute="bottom" id="fz8-x2-ATs"/>
-                            <constraint firstItem="o6J-tK-pUl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="h7H-fu-HeO"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <controllerPlaceholder storyboardName="Split" id="ml5-T9-0iq" sceneMemberID="viewController"/>
+                <customObject id="HEA-8d-el2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="703"/>
-        </scene>
-        <!--Source View Controller-->
-        <scene sceneID="ozu-LR-XQx">
-            <objects>
-                <viewController id="gik-R0-SQR" customClass="SourceViewController" customModule="TestMacOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="hLN-Qv-Tl5">
-                        <rect key="frame" x="0.0" y="0.0" width="558" height="112"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-5s-A96">
-                                <rect key="frame" x="8" y="7" width="542" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Cu3-tP-FvE"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Nhg-l2-sGt"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" title="Collection" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9qI-bp-ZCB">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="collectionButtonPressed:" target="gik-R0-SQR" id="Pep-tb-iHJ"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJO-59-NyQ">
-                                <rect key="frame" x="8" y="55" width="542" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="pqb-82-4bR"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="qaS-vJ-QkI"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" title="Table" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LFd-qA-Xh6">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="tableButtonPressed:" target="gik-R0-SQR" id="saI-W5-eGA"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="EPb-5s-A96" secondAttribute="trailing" constant="8" id="1jI-dM-E66"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EPb-5s-A96" secondAttribute="bottom" constant="8" id="2gw-CO-vB8"/>
-                            <constraint firstItem="EPb-5s-A96" firstAttribute="leading" secondItem="hLN-Qv-Tl5" secondAttribute="leading" constant="8" id="AV5-JW-XHK"/>
-                            <constraint firstAttribute="trailing" secondItem="IJO-59-NyQ" secondAttribute="trailing" constant="8" id="NeW-wt-MwR"/>
-                            <constraint firstItem="IJO-59-NyQ" firstAttribute="top" secondItem="hLN-Qv-Tl5" secondAttribute="top" constant="16" id="RNw-fG-51M"/>
-                            <constraint firstItem="IJO-59-NyQ" firstAttribute="leading" secondItem="hLN-Qv-Tl5" secondAttribute="leading" constant="8" id="Y7I-go-wJo"/>
-                            <constraint firstItem="EPb-5s-A96" firstAttribute="top" secondItem="IJO-59-NyQ" secondAttribute="bottom" constant="8" id="s0m-Nr-pgh"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="collectionButton" destination="EPb-5s-A96" id="rss-eJ-Q59"/>
-                        <outlet property="tableButton" destination="IJO-59-NyQ" id="DL4-b7-1cE"/>
-                    </connections>
-                </viewController>
-                <customObject id="1Hh-CL-c4m" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-459" y="1196"/>
-        </scene>
-        <!--Contacts View Controller-->
-        <scene sceneID="uaM-Ng-GHg">
-            <objects>
-                <viewController id="UZy-Tc-tvs" customClass="ContactsViewController" customModule="TestMacOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="cxP-iP-PJp">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4S-sa-72d">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <clipView key="contentView" id="sg3-QT-3UM">
-                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" id="eCO-mW-iju">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <size key="intercellSpacing" width="3" height="2"/>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
-                                            <connections>
-                                                <outlet property="dataSource" destination="cxP-iP-PJp" id="bks-x4-a7U"/>
-                                                <outlet property="delegate" destination="cxP-iP-PJp" id="eux-sE-s0v"/>
-                                            </connections>
-                                        </tableView>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Kij-Qs-Ret">
-                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="CZd-uy-5sQ">
-                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="T4S-sa-72d" secondAttribute="trailing" id="5bw-sL-87S"/>
-                            <constraint firstItem="T4S-sa-72d" firstAttribute="top" secondItem="cxP-iP-PJp" secondAttribute="top" id="apR-Xn-3l8"/>
-                            <constraint firstAttribute="bottom" secondItem="T4S-sa-72d" secondAttribute="bottom" id="kOx-Yc-izW"/>
-                            <constraint firstItem="T4S-sa-72d" firstAttribute="leading" secondItem="cxP-iP-PJp" secondAttribute="leading" id="zVA-v9-B2F"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="eCO-mW-iju" id="PZp-hE-PSg"/>
-                    </connections>
-                </viewController>
-                <customObject id="qko-zq-kzS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="87" y="1492"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="7sv-zE-Go9">
-            <objects>
-                <viewController id="h61-fb-eon" sceneMemberID="viewController">
-                    <view key="view" id="OLJ-br-h0H">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="lmf-vY-OVd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="592" y="1290"/>
+            <point key="canvasLocation" x="75" y="483"/>
         </scene>
     </scenes>
 </document>
