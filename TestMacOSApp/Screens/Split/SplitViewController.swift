@@ -16,6 +16,7 @@ class SplitViewController: NSViewController {
         super.viewDidLoad()
         
         viewModel = SplitViewModel()
+        viewModel.viewDidLoad()
     }
 
 
