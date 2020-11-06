@@ -10,22 +10,42 @@
         <scene sceneID="eHH-h0-aG4">
             <objects>
                 <viewController id="Y5r-VE-qyH" customClass="ContactsViewController" customModule="TestMacOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="AWi-d3-lDN">
-                        <rect key="frame" x="0.0" y="0.0" width="580" height="380"/>
+                    <view key="view" id="AWi-d3-lDN">
+                        <rect key="frame" x="0.0" y="0.0" width="581" height="379"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="G5f-mG-AIn" customClass="CircularProgress" customModule="CircularProgressMac">
-                                <rect key="frame" x="266" y="165" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="OP9-ea-Nyq"/>
-                                    <constraint firstAttribute="width" constant="50" id="bwe-GS-Z9t"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isIndeterminate" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </customView>
-                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="112" horizontalPageScroll="10" verticalLineScroll="112" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-OV-jDf">
-                                <rect key="frame" x="-1" y="0.0" width="581" height="380"/>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brl-EI-trH">
+                                <rect key="frame" x="0.0" y="0.0" width="581" height="379"/>
+                                <clipView key="contentView" id="QPI-Dy-gmj">
+                                    <rect key="frame" x="1" y="1" width="579" height="377"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView selectable="YES" id="1uf-IM-M9a">
+                                            <rect key="frame" x="0.0" y="0.0" width="579" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfRows="5" maximumNumberOfColumns="1" id="E4P-OK-jWJ">
+                                                <size key="minimumItemSize" width="200" height="150"/>
+                                                <size key="maximumItemSize" width="200" height="150"/>
+                                            </collectionViewGridLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="Y5r-VE-qyH" id="Htc-FI-aqa"/>
+                                                <outlet property="delegate" destination="Y5r-VE-qyH" id="dIL-J7-7zz"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="GHW-OI-HE0">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="mr4-gJ-i3y">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <scrollView hidden="YES" misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="112" horizontalPageScroll="10" verticalLineScroll="112" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-OV-jDf">
+                                <rect key="frame" x="-1" y="-1" width="581" height="380"/>
                                 <clipView key="contentView" id="CVu-0j-Ou9">
                                     <rect key="frame" x="1" y="1" width="579" height="378"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,18 +171,33 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="G5f-mG-AIn" customClass="CircularProgress" customModule="CircularProgressMac">
+                                <rect key="frame" x="266" y="165" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OP9-ea-Nyq"/>
+                                    <constraint firstAttribute="width" constant="50" id="bwe-GS-Z9t"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isIndeterminate" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="3E7-OV-jDf" firstAttribute="leading" secondItem="AWi-d3-lDN" secondAttribute="leading" id="3rN-he-MtC"/>
+                            <constraint firstItem="brl-EI-trH" firstAttribute="leading" secondItem="AWi-d3-lDN" secondAttribute="leading" id="4Tc-xG-kBT"/>
                             <constraint firstItem="G5f-mG-AIn" firstAttribute="centerX" secondItem="AWi-d3-lDN" secondAttribute="centerX" id="7J3-n0-PIV"/>
                             <constraint firstAttribute="trailing" secondItem="3E7-OV-jDf" secondAttribute="trailing" id="LqQ-6D-9PF"/>
                             <constraint firstItem="3E7-OV-jDf" firstAttribute="top" secondItem="AWi-d3-lDN" secondAttribute="top" id="Q7Z-g0-FTI"/>
+                            <constraint firstAttribute="bottom" secondItem="brl-EI-trH" secondAttribute="bottom" id="TAU-kk-2uU"/>
                             <constraint firstItem="G5f-mG-AIn" firstAttribute="centerY" secondItem="AWi-d3-lDN" secondAttribute="centerY" id="ei3-qJ-8o8"/>
                             <constraint firstAttribute="bottom" secondItem="3E7-OV-jDf" secondAttribute="bottom" id="wek-ur-jsU"/>
+                            <constraint firstAttribute="trailing" secondItem="brl-EI-trH" secondAttribute="trailing" id="zl9-by-gox"/>
+                            <constraint firstItem="brl-EI-trH" firstAttribute="top" secondItem="AWi-d3-lDN" secondAttribute="top" id="znD-UZ-qie"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="G5f-mG-AIn" id="wc1-yv-eUo"/>
+                        <outlet property="collectionView" destination="1uf-IM-M9a" id="q38-RI-L7p"/>
                         <outlet property="tableView" destination="lwa-Cq-XVI" id="fPF-Ah-XB7"/>
                     </connections>
                 </viewController>

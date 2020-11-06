@@ -17,6 +17,7 @@ protocol ContactsViewControllerSplitProtocol: class {
 class ContactsViewController: NSViewController {
     @IBOutlet private weak var tableView: NSTableView!
     @IBOutlet private weak var activityIndicator: CircularProgress!
+    @IBOutlet private weak var collectionView: NSCollectionView!
     
     weak var delegate: ContactsViewControllerSplitProtocol?
     private var viewModel: ContactsViewModelProtocol!
@@ -70,6 +71,7 @@ extension ContactsViewController: ContactsViewModelActionsProtocol {
     
     func reloadTableView() {
         tableView.reloadData()
+        collectionView.reloadData()
     }
 }
 
@@ -102,3 +104,41 @@ extension ContactsViewController: NSTableViewDelegate, NSTableViewDataSource {
         }
     }
 }
+
+
+extension ContactsViewController: NSCollectionViewDataSource, NSCollectionViewDelegate {
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfContacts() + 1
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        switch indexPath.item {
+        case viewModel.numberOfContacts():
+            guard let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue:  String(describing: LoadMoreCollectionCell.self)), for: indexPath) as? LoadMoreCollectionCell else {
+                return NSCollectionViewItem()
+            }
+            
+            let stateModel = viewModel.loadMoreCellStateModel()
+            item.setup(with: stateModel)
+            return item
+        default:
+            guard let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue:  String(describing: ContactCollectionCell.self)), for: indexPath) as? ContactCollectionCell, let stateModel = viewModel.contactCellStateModel(for: indexPath.item) else {
+                return NSCollectionViewItem()
+            }
+            
+            item.setup(with: stateModel)
+            return item
+        }
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        
+        guard let selectedIndex = indexPaths.first?.item, let contact = viewModel.contact(for: selectedIndex) else {
+            return
+        }
+        
+        delegate?.showDetails(for: contact)
+    }
+}
+
+

@@ -35,6 +35,10 @@
 		86DDBFEB2555579400F98028 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDBFE62555579400F98028 /* Strings.swift */; };
 		86DDBFED2555579400F98028 /* Configuration.yml in Resources */ = {isa = PBXBuildFile; fileRef = 86DDBFE82555579400F98028 /* Configuration.yml */; };
 		86DDBFEF255558AF00F98028 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86DDBFEE255558AF00F98028 /* Localizable.strings */; };
+		86DDBFF725558FF700F98028 /* ContactCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDBFF525558FF700F98028 /* ContactCollectionCell.swift */; };
+		86DDBFF825558FF700F98028 /* LoadMoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDBFF625558FF700F98028 /* LoadMoreCollectionCell.swift */; };
+		86DDBFFB2555908500F98028 /* ContactCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86DDBFF92555908500F98028 /* ContactCollectionCell.xib */; };
+		86DDBFFC2555908500F98028 /* LoadMoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86DDBFFA2555908500F98028 /* LoadMoreCollectionCell.xib */; };
 		86EC66B42552B7FF00F6FCEB /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EC66B32552B7FF00F6FCEB /* ContactsRepository.swift */; };
 		86EC66BA2552BBBA00F6FCEB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EC66B92552BBBA00F6FCEB /* Contact.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +77,10 @@
 		86DDBFE62555579400F98028 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		86DDBFE82555579400F98028 /* Configuration.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = Configuration.yml; sourceTree = "<group>"; };
 		86DDBFEE255558AF00F98028 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		86DDBFF525558FF700F98028 /* ContactCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCollectionCell.swift; sourceTree = "<group>"; };
+		86DDBFF625558FF700F98028 /* LoadMoreCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreCollectionCell.swift; sourceTree = "<group>"; };
+		86DDBFF92555908500F98028 /* ContactCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactCollectionCell.xib; sourceTree = "<group>"; };
+		86DDBFFA2555908500F98028 /* LoadMoreCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadMoreCollectionCell.xib; sourceTree = "<group>"; };
 		86EC66B32552B7FF00F6FCEB /* ContactsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
 		86EC66B92552BBBA00F6FCEB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BAA03B4F68442768C224DB9D /* Pods-TestMacOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMacOSApp.debug.xcconfig"; path = "Target Support Files/Pods-TestMacOSApp/Pods-TestMacOSApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,13 +157,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		866B2BBA2553DBBC00460204 /* Views */ = {
+		866B2BBA2553DBBC00460204 /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
 				866B2BBB2553DBF600460204 /* ContactTableCell.swift */,
 				86DDBFE02555463600F98028 /* LoadMoreTableCell.swift */,
 			);
-			path = Views;
+			path = TableViews;
 			sourceTree = "<group>";
 		};
 		867805DE2552B1350022A320 /* Source */ = {
@@ -170,7 +178,8 @@
 		867805E12552B1560022A320 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				866B2BBA2553DBBC00460204 /* Views */,
+				86DDBFF025558FA500F98028 /* CollectionViews */,
+				866B2BBA2553DBBC00460204 /* TableViews */,
 				8652A8B82551D457004CE5CC /* ContactsViewController.swift */,
 				867805E22552B1680022A320 /* Contacts.storyboard */,
 			);
@@ -242,6 +251,17 @@
 				86DDBFE62555579400F98028 /* Strings.swift */,
 			);
 			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		86DDBFF025558FA500F98028 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				86DDBFF525558FF700F98028 /* ContactCollectionCell.swift */,
+				86DDBFF92555908500F98028 /* ContactCollectionCell.xib */,
+				86DDBFF625558FF700F98028 /* LoadMoreCollectionCell.swift */,
+				86DDBFFA2555908500F98028 /* LoadMoreCollectionCell.xib */,
+			);
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 		86EC66B22552B7EB00F6FCEB /* Repository */ = {
@@ -323,7 +343,9 @@
 			files = (
 				867805E02552B1500022A320 /* Source.storyboard in Resources */,
 				867805EF2552B3BF0022A320 /* Split.storyboard in Resources */,
+				86DDBFFC2555908500F98028 /* LoadMoreCollectionCell.xib in Resources */,
 				867805E62552B17F0022A320 /* ContactDetails.storyboard in Resources */,
+				86DDBFFB2555908500F98028 /* ContactCollectionCell.xib in Resources */,
 				867805E32552B1680022A320 /* Contacts.storyboard in Resources */,
 				86DDBFED2555579400F98028 /* Configuration.yml in Resources */,
 				86DDBFEF255558AF00F98028 /* Localizable.strings in Resources */,
@@ -403,7 +425,9 @@
 				866B2BB92553402300460204 /* ContactsResponse.swift in Sources */,
 				86DDBFE92555579400F98028 /* Assets.swift in Sources */,
 				866B2BBC2553DBF600460204 /* ContactTableCell.swift in Sources */,
+				86DDBFF725558FF700F98028 /* ContactCollectionCell.swift in Sources */,
 				86DDBFE12555463600F98028 /* LoadMoreTableCell.swift in Sources */,
+				86DDBFF825558FF700F98028 /* LoadMoreCollectionCell.swift in Sources */,
 				864923E8255314F100898EC4 /* RestApiRequestFactory.swift in Sources */,
 				8652A8BF2551DF25004CE5CC /* ContactDetailsViewModel.swift in Sources */,
 				86812BE82551482A00DA799A /* SplitViewController.swift in Sources */,

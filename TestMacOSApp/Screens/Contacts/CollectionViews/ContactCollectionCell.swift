@@ -9,13 +9,8 @@
 import Foundation
 import Cocoa
 
-struct ContactTableCellStateModel {
-    var imageURL: String?
-    var titleLabelText: String?
-    var subtitleLabelText: String?
-}
 
-class ContactTableCell: NSTableCellView {
+class ContactCollectionCell: NSCollectionViewItem {
     @IBOutlet private weak var pictureView: NSImageView!
     @IBOutlet private weak var titleLabel: NSTextField!
     @IBOutlet private weak var subtitleLabel: NSTextField!
@@ -25,5 +20,4 @@ class ContactTableCell: NSTableCellView {
         titleLabel.stringValue = stateModel.titleLabelText ?? ""
         subtitleLabel.stringValue = stateModel.subtitleLabelText ?? ""
     }
-    
 }

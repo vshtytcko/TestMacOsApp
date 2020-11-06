@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ContactCollectionCell" customModule="TestMacOSApp" customModuleProvider="target">
+            <connections>
+                <outlet property="pictureView" destination="arX-gU-0o2" id="Xug-rU-rwU"/>
+                <outlet property="subtitleLabel" destination="TEF-T5-nUg" id="WhB-9t-5Zw"/>
+                <outlet property="titleLabel" destination="dfx-zR-XcO" id="obC-t7-g9k"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView misplaced="YES" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dfx-zR-XcO">
+                    <rect key="frame" x="58" y="31" width="85" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="User Name" id="By2-WW-c6u">
+                        <font key="font" size="15" name="BasisGrotesquePro-Bold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arX-gU-0o2">
+                    <rect key="frame" x="65" y="56" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="Jbl-be-IKM"/>
+                        <constraint firstAttribute="width" constant="70" id="z4x-RD-FrH"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="vaf-Su-Jir"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="35"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TEF-T5-nUg">
+                    <rect key="frame" x="81" y="8" width="39" height="15"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="email" id="XEG-Oi-xJs">
+                        <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="TEF-T5-nUg" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="3X7-XU-NDw"/>
+                <constraint firstItem="TEF-T5-nUg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="48u-QM-zBp"/>
+                <constraint firstItem="arX-gU-0o2" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="BpT-7O-kj2"/>
+                <constraint firstItem="dfx-zR-XcO" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="I4v-NS-Ov6"/>
+                <constraint firstItem="arX-gU-0o2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="16" id="fwW-Gd-kTA"/>
+                <constraint firstAttribute="bottom" secondItem="TEF-T5-nUg" secondAttribute="bottom" constant="8" id="lIQ-wO-Baq"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="arX-gU-0o2" secondAttribute="trailing" constant="8" id="lu0-Yj-08D"/>
+                <constraint firstItem="dfx-zR-XcO" firstAttribute="top" secondItem="arX-gU-0o2" secondAttribute="bottom" constant="8" id="r5c-aD-WW8"/>
+                <constraint firstItem="dfx-zR-XcO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="rzP-OT-Xfh"/>
+                <constraint firstItem="TEF-T5-nUg" firstAttribute="top" secondItem="dfx-zR-XcO" secondAttribute="bottom" constant="8" id="skS-8F-foQ"/>
+            </constraints>
+            <point key="canvasLocation" x="298.5" y="261"/>
+        </customView>
+        <customObject id="Eey-ZT-pfT" customClass="ContactCollectionCell" customModule="TestMacOSApp" customModuleProvider="target">
+            <connections>
+                <outlet property="pictureView" destination="arX-gU-0o2" id="KZ7-3q-6ea"/>
+                <outlet property="subtitleLabel" destination="TEF-T5-nUg" id="JB0-lz-ixM"/>
+                <outlet property="titleLabel" destination="dfx-zR-XcO" id="YxM-jt-DLB"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="sG8-Qd-Cps"/>
+            </connections>
+        </customObject>
+    </objects>
+</document>
