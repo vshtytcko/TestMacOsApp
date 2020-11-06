@@ -11,13 +11,162 @@
             <objects>
                 <viewController id="cv9-DA-8kf" customClass="ContactDetailsViewController" customModule="TestMacOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="r8B-SG-ZKw">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="XWM-KQ-Zkk">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zdv-de-nVg">
+                                        <rect key="frame" x="154" y="130" width="52" height="15"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="location" id="jai-Pv-Ml0">
+                                            <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lP7-Hi-GUS">
+                                        <rect key="frame" x="84" y="107" width="58" height="15"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Contacts" id="Kq1-pu-0xt">
+                                            <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fv0-Ef-hss">
+                                        <rect key="frame" x="154" y="84" width="140" height="15"/>
+                                        <textFieldCell key="cell" title="date of birthdate" id="xRu-4W-1pi">
+                                            <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-QI-f8T">
+                                        <rect key="frame" x="86" y="130" width="56" height="15"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Location" id="4Um-ro-o4Q">
+                                            <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jZ5-Zu-P0K">
+                                        <rect key="frame" x="154" y="153" width="47" height="15"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="gender" id="fG8-oy-QhJ">
+                                            <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gvc-3e-nEQ">
+                                        <rect key="frame" x="93" y="153" width="49" height="15"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Gender" id="tfz-Xg-bT3">
+                                            <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W3y-Wd-kIw">
+                                        <rect key="frame" x="40" y="184" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Nke-rk-Sbg"/>
+                                            <constraint firstAttribute="width" constant="100" id="wZT-3t-U7V"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="6mn-rh-elF"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3L5-96-bdp">
+                                        <rect key="frame" x="154" y="240" width="140" height="21"/>
+                                        <textFieldCell key="cell" truncatesLastVisibleLine="YES" alignment="left" title="Name" id="yb2-1x-vJz">
+                                            <font key="font" size="18" name="BasisGrotesquePro-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AXV-EG-YM6">
+                                        <rect key="frame" x="154" y="107" width="35" height="15"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="email" id="hw7-oi-rDC">
+                                            <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-xR-fOx">
+                                        <rect key="frame" x="63" y="84" width="79" height="15"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Date of Birth" id="SgS-BA-WCO">
+                                            <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JcY-Th-Mus">
+                                        <rect key="frame" x="150" y="204" width="69" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Chat" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VIn-9D-g5j">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="chatButtonPressed:" target="cv9-DA-8kf" id="2Eo-GL-f6G"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8gp-xR-fOx" firstAttribute="trailing" secondItem="lP7-Hi-GUS" secondAttribute="trailing" priority="900" id="0mN-no-jHj"/>
+                                    <constraint firstItem="Zdv-de-nVg" firstAttribute="leading" secondItem="lAr-QI-f8T" secondAttribute="trailing" priority="900" constant="16" id="3at-iG-KbX"/>
+                                    <constraint firstItem="AXV-EG-YM6" firstAttribute="leading" secondItem="lP7-Hi-GUS" secondAttribute="trailing" priority="900" constant="16" id="4Bo-3U-0uQ"/>
+                                    <constraint firstItem="gvc-3e-nEQ" firstAttribute="trailing" secondItem="W3y-Wd-kIw" secondAttribute="trailing" priority="900" id="7Ya-pb-96X"/>
+                                    <constraint firstItem="gvc-3e-nEQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JcY-Th-Mus" secondAttribute="bottom" priority="900" constant="8" id="7mX-Ac-1gS"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="900" constant="300" id="CwF-LN-d1t"/>
+                                    <constraint firstItem="Fv0-Ef-hss" firstAttribute="top" secondItem="AXV-EG-YM6" secondAttribute="bottom" priority="900" constant="8" id="GRY-0U-c21"/>
+                                    <constraint firstItem="8gp-xR-fOx" firstAttribute="top" secondItem="AXV-EG-YM6" secondAttribute="bottom" priority="900" constant="8" id="GsL-yk-cAw"/>
+                                    <constraint firstItem="W3y-Wd-kIw" firstAttribute="centerX" secondItem="XWM-KQ-Zkk" secondAttribute="centerX" priority="900" constant="-60" id="Oqz-sL-IQd"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fv0-Ef-hss" secondAttribute="bottom" priority="900" constant="16" id="QcP-kp-FUg"/>
+                                    <constraint firstItem="lP7-Hi-GUS" firstAttribute="top" secondItem="Zdv-de-nVg" secondAttribute="bottom" priority="900" constant="8" id="Rvc-7E-8du"/>
+                                    <constraint firstItem="gvc-3e-nEQ" firstAttribute="top" secondItem="W3y-Wd-kIw" secondAttribute="bottom" priority="100" constant="16" id="Uni-4C-lci"/>
+                                    <constraint firstItem="Zdv-de-nVg" firstAttribute="top" secondItem="jZ5-Zu-P0K" secondAttribute="bottom" priority="900" constant="8" id="WVV-vA-Yms"/>
+                                    <constraint firstItem="W3y-Wd-kIw" firstAttribute="top" secondItem="XWM-KQ-Zkk" secondAttribute="top" priority="900" constant="16" id="aBn-Wo-aRJ"/>
+                                    <constraint firstItem="3L5-96-bdp" firstAttribute="leading" secondItem="W3y-Wd-kIw" secondAttribute="trailing" priority="900" constant="16" id="eBf-Ks-B3a"/>
+                                    <constraint firstItem="lAr-QI-f8T" firstAttribute="top" secondItem="jZ5-Zu-P0K" secondAttribute="bottom" priority="900" constant="8" id="fkA-3U-LiH"/>
+                                    <constraint firstAttribute="trailing" secondItem="3L5-96-bdp" secondAttribute="trailing" priority="900" constant="8" id="fnb-NR-K1D"/>
+                                    <constraint firstItem="JcY-Th-Mus" firstAttribute="top" secondItem="3L5-96-bdp" secondAttribute="bottom" priority="900" constant="8" id="fqm-eT-50K"/>
+                                    <constraint firstItem="Fv0-Ef-hss" firstAttribute="leading" secondItem="8gp-xR-fOx" secondAttribute="trailing" priority="900" constant="16" id="gP4-73-uBQ"/>
+                                    <constraint firstItem="jZ5-Zu-P0K" firstAttribute="centerY" secondItem="gvc-3e-nEQ" secondAttribute="centerY" priority="900" id="gdJ-ah-kdu"/>
+                                    <constraint firstItem="AXV-EG-YM6" firstAttribute="top" secondItem="Zdv-de-nVg" secondAttribute="bottom" priority="900" constant="8" id="hDY-8v-k1z"/>
+                                    <constraint firstItem="jZ5-Zu-P0K" firstAttribute="leading" secondItem="gvc-3e-nEQ" secondAttribute="trailing" priority="900" constant="16" id="hQ7-gK-fWo"/>
+                                    <constraint firstItem="JcY-Th-Mus" firstAttribute="leading" secondItem="3L5-96-bdp" secondAttribute="leading" priority="900" id="hWN-24-Ko9"/>
+                                    <constraint firstAttribute="width" constant="300" id="js7-oc-Ubk"/>
+                                    <constraint firstItem="3L5-96-bdp" firstAttribute="top" secondItem="XWM-KQ-Zkk" secondAttribute="top" priority="900" constant="39" id="ovg-dp-to0"/>
+                                    <constraint firstItem="lP7-Hi-GUS" firstAttribute="trailing" secondItem="lAr-QI-f8T" secondAttribute="trailing" priority="900" id="qcD-tX-uJV"/>
+                                    <constraint firstItem="lAr-QI-f8T" firstAttribute="trailing" secondItem="gvc-3e-nEQ" secondAttribute="trailing" priority="900" id="rF4-4a-qZs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fv0-Ef-hss" secondAttribute="trailing" constant="8" id="tOr-kr-Dws"/>
+                                    <constraint firstItem="3L5-96-bdp" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="W3y-Wd-kIw" secondAttribute="bottom" priority="900" id="zZZ-BL-wnv"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="XWM-KQ-Zkk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r8B-SG-ZKw" secondAttribute="leading" id="Af0-ca-t9n"/>
+                            <constraint firstItem="XWM-KQ-Zkk" firstAttribute="centerX" secondItem="r8B-SG-ZKw" secondAttribute="centerX" id="fRf-4d-TJW"/>
+                            <constraint firstItem="XWM-KQ-Zkk" firstAttribute="top" secondItem="r8B-SG-ZKw" secondAttribute="top" id="jbK-i0-fZ4"/>
+                            <constraint firstAttribute="bottom" secondItem="XWM-KQ-Zkk" secondAttribute="bottom" id="vNS-O2-XP5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contactsLabel" destination="AXV-EG-YM6" id="x9w-uh-Cyz"/>
+                        <outlet property="dateOfBirthLabel" destination="Fv0-Ef-hss" id="tZh-1l-rvT"/>
+                        <outlet property="genderLabel" destination="jZ5-Zu-P0K" id="Bt0-8s-C7A"/>
+                        <outlet property="locationLabel" destination="Zdv-de-nVg" id="Kkq-zK-k6C"/>
+                        <outlet property="nameLabel" destination="3L5-96-bdp" id="eEa-RA-hTe"/>
+                        <outlet property="pictureView" destination="W3y-Wd-kIw" id="dM8-nO-uz0"/>
+                    </connections>
                 </viewController>
                 <customObject id="kWD-59-pcD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="592" y="1290"/>
+            <point key="canvasLocation" x="592" y="1260"/>
         </scene>
     </scenes>
 </document>

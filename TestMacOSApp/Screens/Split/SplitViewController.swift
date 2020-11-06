@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SplitViewController: NSViewController {
+class SplitViewController: NSViewController, NSSplitViewDelegate {
     @IBOutlet weak var splitView: NSSplitView!
     
     private var sourceViewController: SourceViewController!
@@ -38,6 +38,13 @@ class SplitViewController: NSViewController {
 
 extension SplitViewController: ContactsViewControllerSplitProtocol {
     func showDetails(for contact: Contact) {
+        if splitView.subviews.count > 1 {
+            splitView.subviews[1].removeFromSuperview()
+        }
+        let contactDetailsVC = StoryboardScene.ContactDetails.initialScene.instantiate()
+        contactDetailsVC.viewModel = ContactDetailsViewModel(contact: contact)
+        contactDetailsViewController = contactDetailsVC
         
+        splitView.addArrangedSubview(contactDetailsVC.view)
     }
 }

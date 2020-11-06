@@ -9,11 +9,43 @@
 import Foundation
 
 protocol ContactDetailsViewModelProtocol {
+    var delegate: ContactDetailsViewModelActionsProtocol? { get set }
+    
     func viewDidLoad()
+    func chatButtonPressed()
+}
+
+protocol ContactDetailsViewModelActionsProtocol: class {
+    func updateDetailsView(stateModel: ContactDetailsViewStateModel)
 }
 
 class ContactDetailsViewModel: ContactDetailsViewModelProtocol {
+    private let contact: Contact
+    
+    weak var delegate: ContactDetailsViewModelActionsProtocol?
+    
+    init(contact: Contact) {
+        self.contact = contact
+    }
+    
     func viewDidLoad() {
+        delegate?.updateDetailsView(stateModel: contactsDetailsStateModel())
+    }
+    
+    func chatButtonPressed() {
         
+    }
+    
+    private func contactsDetailsStateModel() -> ContactDetailsViewStateModel {
+        let nameLabelText = contact.nameInfo?.full ?? ""
+        let pictureURL = contact.pictureInfo?.large ?? ""
+        let dateOfBirthText = contact.dateOfBirthInfo?.date ?? ""
+        let genderText = contact.gender?.rawValue ?? ""
+        let contactsText = (contact.cell ?? "") + "\n" + (contact.phone ?? "")
+        let locationText = (contact.locationInfo?.city ?? "") + ", " + (contact.locationInfo?.country ?? "")
+        
+        let stateModel = ContactDetailsViewStateModel(nameLabelText: nameLabelText, pictureURL: pictureURL, dateOfBirthText: dateOfBirthText, genderText: genderText, contactsText: contactsText, locationText: locationText)
+        
+        return stateModel
     }
 }
