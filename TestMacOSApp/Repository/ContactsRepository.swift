@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import Alamofire
+
+protocol ContactsRepositoryProtocol {
+    func refreshContacts(page: Int, count: Int, completion: @escaping (([Contact]?, String?) -> Void))
+}
+
+class ContactsRepository: ContactsRepositoryProtocol {
+    func refreshContacts(page: Int, count: Int, completion: @escaping (([Contact]?, String?) -> Void)) {
+        guard let request = RestApiRequestFactory.getContacts(page: page, count: count).urlRequest else {return}
+        AF.request(request).validate().responseDecodable(of: ContactsResponse.self) { (response) in
+            completion(response.value?.results, response.error?.localizedDescription)
+        }
+    }
+}

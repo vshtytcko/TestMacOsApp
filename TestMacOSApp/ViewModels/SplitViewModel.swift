@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-protocol SplitViewModelProtocol: class {
+protocol SplitViewModelProtocol {
     func viewDidLoad()
 }
 

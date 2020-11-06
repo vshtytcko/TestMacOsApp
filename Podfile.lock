@@ -1,16 +1,20 @@
 PODS:
-  - Alamofire (5.2.2)
+  - Alamofire (5.4.0)
+  - CircularProgressMac (2.0.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
+  - Alamofire
+  - CircularProgressMac
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CircularProgressMac
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  CircularProgressMac: 7472c84b0ecb0adb5f61d39302ff65558b09cc60
 
-PODFILE CHECKSUM: d0620e1b0abf717310b8f6b4db894aa2701b0391
+PODFILE CHECKSUM: c5fba97c2e0e0fae82bedbbb4aba9e0f21f5216f
 
 COCOAPODS: 1.9.3

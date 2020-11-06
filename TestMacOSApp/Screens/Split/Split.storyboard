@@ -14,36 +14,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="rdO-Ed-J7H">
+                                <rect key="frame" x="0.0" y="0.0" width="112" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="y0t-3a-374"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Bl2-VU-juo" kind="embed" id="zog-Tc-Uos"/>
+                                </connections>
+                            </containerView>
                             <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBi-gZ-X3t">
-                                <rect key="frame" x="0.0" y="0.0" width="1000" height="500"/>
+                                <rect key="frame" x="112" y="0.0" width="888" height="500"/>
                                 <subviews>
-                                    <customView id="bJc-LQ-iJT">
-                                        <rect key="frame" x="0.0" y="0.0" width="326" height="500"/>
+                                    <containerView id="RpE-0B-axJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="436" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <subviews>
-                                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="rdO-Ed-J7H">
-                                                <rect key="frame" x="0.0" y="0.0" width="326" height="500"/>
-                                                <connections>
-                                                    <segue destination="Bl2-VU-juo" kind="embed" id="zog-Tc-Uos"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
                                         <constraints>
-                                            <constraint firstItem="rdO-Ed-J7H" firstAttribute="top" secondItem="bJc-LQ-iJT" secondAttribute="top" id="0Md-tB-V8r"/>
-                                            <constraint firstAttribute="bottom" secondItem="rdO-Ed-J7H" secondAttribute="bottom" id="8vI-jC-w1I"/>
-                                            <constraint firstItem="rdO-Ed-J7H" firstAttribute="leading" secondItem="bJc-LQ-iJT" secondAttribute="leading" id="e6W-DZ-Wve"/>
-                                            <constraint firstAttribute="trailing" secondItem="rdO-Ed-J7H" secondAttribute="trailing" id="vla-IV-5hJ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="ESH-3n-AZ2"/>
                                         </constraints>
-                                    </customView>
-                                    <containerView fixedFrame="YES" id="RpE-0B-axJ">
-                                        <rect key="frame" x="327" y="0.0" width="331" height="500"/>
-                                        <autoresizingMask key="autoresizingMask"/>
                                         <connections>
                                             <segue destination="zIR-Od-9tT" kind="embed" id="Tld-J0-KGO"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" id="dd5-gS-lpe">
-                                        <rect key="frame" x="659" y="0.0" width="341" height="500"/>
+                                        <rect key="frame" x="437" y="0.0" width="451" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <connections>
                                             <segue destination="Lia-dt-Gxv" kind="embed" id="c3Z-WV-lZW"/>
@@ -53,15 +47,17 @@
                                 <holdingPriorities>
                                     <real value="250"/>
                                     <real value="250"/>
-                                    <real value="250"/>
                                 </holdingPriorities>
                             </splitView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="GBi-gZ-X3t" firstAttribute="leading" secondItem="yn0-Qv-l17" secondAttribute="leading" id="0ut-Fx-FN6"/>
+                            <constraint firstItem="rdO-Ed-J7H" firstAttribute="top" secondItem="yn0-Qv-l17" secondAttribute="top" id="0mO-OV-mkJ"/>
+                            <constraint firstItem="rdO-Ed-J7H" firstAttribute="leading" secondItem="yn0-Qv-l17" secondAttribute="leading" id="4DO-6w-MPz"/>
                             <constraint firstAttribute="bottom" secondItem="GBi-gZ-X3t" secondAttribute="bottom" id="LF5-Eo-gdz"/>
                             <constraint firstAttribute="trailing" secondItem="GBi-gZ-X3t" secondAttribute="trailing" id="WkH-0a-7mN"/>
+                            <constraint firstItem="GBi-gZ-X3t" firstAttribute="leading" secondItem="rdO-Ed-J7H" secondAttribute="trailing" id="fIe-Va-tyu"/>
                             <constraint firstItem="GBi-gZ-X3t" firstAttribute="top" secondItem="yn0-Qv-l17" secondAttribute="top" id="nR2-wK-s22"/>
+                            <constraint firstAttribute="bottom" secondItem="rdO-Ed-J7H" secondAttribute="bottom" id="ymn-fc-pnu"/>
                         </constraints>
                     </view>
                 </viewController>

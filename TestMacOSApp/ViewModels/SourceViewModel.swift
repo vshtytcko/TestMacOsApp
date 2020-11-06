@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SourceViewModelProtocol: class {
+protocol SourceViewModelProtocol {
     func viewDidLoad()
     func tableButtonPressed()
     func collectionButtonPressed()

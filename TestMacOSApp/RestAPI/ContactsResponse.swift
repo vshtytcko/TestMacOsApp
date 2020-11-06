@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  ContactsResponse.swift
 //  TestMacOSApp
 //
 //  Created by Vladislav on 11/4/20.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-class Constants {
-    class Rest {
-        static let countOfItemsInBatch = 20
-    }
+struct ContactsResponse: Codable {
+    let results: [Contact]
 }

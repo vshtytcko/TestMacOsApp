@@ -10,14 +10,14 @@
         <scene sceneID="m3v-WY-Kwg">
             <objects>
                 <viewController id="eZ7-B0-RJl" customClass="SourceViewController" customModule="TestMacOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Js1-6T-B0K">
-                        <rect key="frame" x="0.0" y="0.0" width="558" height="112"/>
+                    <view key="view" misplaced="YES" id="Js1-6T-B0K">
+                        <rect key="frame" x="0.0" y="0.0" width="116" height="112"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bka-IY-Tsu">
-                                <rect key="frame" x="8" y="7" width="542" height="42"/>
+                                <rect key="frame" x="8" y="7" width="100" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="R3S-DI-u1X"/>
+                                    <constraint firstAttribute="width" constant="100" id="R3S-DI-u1X"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="s5I-hF-VYb"/>
                                 </constraints>
                                 <buttonCell key="cell" type="smallSquare" title="Collection" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1P6-fQ-HMA">
@@ -29,10 +29,10 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FcD-ZZ-9jO">
-                                <rect key="frame" x="8" y="55" width="542" height="42"/>
+                                <rect key="frame" x="8" y="55" width="100" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="GJv-In-6gx"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="NAG-HL-H7X"/>
+                                    <constraint firstAttribute="width" constant="100" id="NAG-HL-H7X"/>
                                 </constraints>
                                 <buttonCell key="cell" type="smallSquare" title="Table" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fQh-Oa-ma1">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

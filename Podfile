@@ -6,5 +6,7 @@ target 'TestMacOSApp' do
   use_frameworks!
 
   # Pods for TestMacOSApp
-pod 'Alamofire', '~> 5.2'
+pod 'Alamofire'
+pod 'CircularProgressMac'
+
 end

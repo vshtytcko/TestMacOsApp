@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ContactDetailsViewModelProtocol: class {
+protocol ContactDetailsViewModelProtocol {
     func viewDidLoad()
 }
 
