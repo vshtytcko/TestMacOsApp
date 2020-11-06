@@ -8,5 +8,5 @@ target 'TestMacOSApp' do
   # Pods for TestMacOSApp
 pod 'Alamofire'
 pod 'CircularProgressMac'
-
+pod 'SwiftGen', '6.1.0'
 end

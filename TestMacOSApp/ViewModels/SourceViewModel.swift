@@ -20,14 +20,10 @@ class SourceViewModel: SourceViewModelProtocol {
     }
     
     func tableButtonPressed() {
-//            DatabaseService.shared.entitiesFor(type: Contact.self, context: Constants.Database.mainObjectContext) { (contacts) in
-//                for contact in contacts {
-//                    print(contact.dateOfBirthInfo?.age, contact.dateOfBirthInfo?.date, contact.cell)
-//                }
-//            }
+        
     }
     
     func collectionButtonPressed() {
-//        DatabaseService.shared.saveMain()
+        
     }
 }

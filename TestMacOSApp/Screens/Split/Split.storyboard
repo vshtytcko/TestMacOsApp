@@ -26,8 +26,8 @@
                             <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBi-gZ-X3t">
                                 <rect key="frame" x="112" y="0.0" width="888" height="500"/>
                                 <subviews>
-                                    <containerView id="RpE-0B-axJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="436" height="500"/>
+                                    <containerView misplaced="YES" id="RpE-0B-axJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="888" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="ESH-3n-AZ2"/>
@@ -36,18 +36,13 @@
                                             <segue destination="zIR-Od-9tT" kind="embed" id="Tld-J0-KGO"/>
                                         </connections>
                                     </containerView>
-                                    <containerView fixedFrame="YES" id="dd5-gS-lpe">
-                                        <rect key="frame" x="437" y="0.0" width="451" height="500"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <connections>
-                                            <segue destination="Lia-dt-Gxv" kind="embed" id="c3Z-WV-lZW"/>
-                                        </connections>
-                                    </containerView>
                                 </subviews>
                                 <holdingPriorities>
                                     <real value="250"/>
-                                    <real value="250"/>
                                 </holdingPriorities>
+                                <connections>
+                                    <outlet property="delegate" destination="9DV-wm-Em4" id="du6-G8-HRh"/>
+                                </connections>
                             </splitView>
                         </subviews>
                         <constraints>
@@ -60,6 +55,9 @@
                             <constraint firstAttribute="bottom" secondItem="rdO-Ed-J7H" secondAttribute="bottom" id="ymn-fc-pnu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="splitView" destination="GBi-gZ-X3t" id="Jd8-nV-JrM"/>
+                    </connections>
                 </viewController>
                 <customObject id="3ae-tt-0IM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,10 +10,15 @@ import Foundation
 import Cocoa
 import CircularProgressMac
 
+protocol ContactsViewControllerSplitProtocol: class {
+    func showDetails(for contact: Contact)
+}
+
 class ContactsViewController: NSViewController {
     @IBOutlet private weak var tableView: NSTableView!
     @IBOutlet private weak var activityIndicator: CircularProgress!
     
+    weak var delegate: ContactsViewControllerSplitProtocol?
     private var viewModel: ContactsViewModelProtocol!
     
     override func viewDidLoad() {
@@ -22,13 +27,15 @@ class ContactsViewController: NSViewController {
         setupDependancies()
         setupView()
         
-        
+        viewModel.viewDidLoad()
     }
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
+    @IBAction private func tableViewDidSelect(_ sender: Any) {
+        guard let contact = viewModel.contact(for: tableView.selectedRow) else {
+            return
+        }
         
-        viewModel.viewDidLoad()
+        delegate?.showDetails(for: contact)
     }
 }
 
@@ -52,14 +59,18 @@ extension ContactsViewController: ContactsViewModelActionsProtocol {
     }
     
     func handleError(message: String) {
-        print("error", message)
+        let alert = NSAlert()
+        alert.alertStyle = .informational
+        alert.messageText = message
+        alert.addButton(withTitle: L10n.ok)
+        if let window = view.window {
+            alert.beginSheetModal(for: window, completionHandler: nil)
+        }
     }
     
     func reloadTableView() {
         tableView.reloadData()
     }
-    
-    
 }
 
 extension ContactsViewController: NSTableViewDelegate, NSTableViewDataSource {
@@ -78,18 +89,14 @@ extension ContactsViewController: NSTableViewDelegate, NSTableViewDataSource {
                     return nil
             }
             
-            let stateModel = LoadMoreTableCellStateModel(loadMoreAction: {
-                self.viewModel.loadMoreContacts()
-            })
+            let stateModel = viewModel.loadMoreCellStateModel()
             cell.setup(with: stateModel)
             return cell
         default:
-            guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: String(describing: ContactTableCell.self)), owner: self) as? ContactTableCell,
-                let contact = viewModel.contact(for: row) else {
-                    return nil
+            guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: String(describing: ContactTableCell.self)), owner: self) as? ContactTableCell, let stateModel = viewModel.contactCellStateModel(for: row) else {
+                return nil
             }
-            
-            let stateModel = ContactTableCellStateModel(imageURL: contact.pictureInfo?.thumbnail, titleLabelText: contact.nameInfo?.full, subtitleLabelText: contact.email)
+                
             cell.setup(with: stateModel)
             return cell
         }

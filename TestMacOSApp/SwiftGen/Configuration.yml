@@ -1,0 +1,21 @@
+# Storyboards
+ib:
+    inputs: ../
+    outputs:
+       - templateName: scenes-swift4
+         output: StoryboardScenes.swift
+
+# Localization
+strings:
+    inputs: ../Localizable.strings
+    outputs:
+        - templateName: structured-swift4
+          output: Strings.swift
+
+# Images & Colors
+xcassets:
+    inputs: ../Assets.xcassets
+    outputs:
+        - templateName: swift4
+          output: Assets.swift
+          

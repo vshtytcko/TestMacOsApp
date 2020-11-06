@@ -132,6 +132,7 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
+                                                <action selector="tableViewDidSelect:" target="Y5r-VE-qyH" id="SMQ-Mb-u2g"/>
                                                 <outlet property="dataSource" destination="Y5r-VE-qyH" id="FW4-Kb-ylQ"/>
                                                 <outlet property="delegate" destination="Y5r-VE-qyH" id="E0C-iR-BXs"/>
                                             </connections>

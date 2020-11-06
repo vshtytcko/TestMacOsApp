@@ -9,7 +9,12 @@
 import Cocoa
 
 class SplitViewController: NSViewController {
-
+    @IBOutlet weak var splitView: NSSplitView!
+    
+    private var sourceViewController: SourceViewController!
+    private var contactsViewController: ContactsViewController!
+    private var contactDetailsViewController: ContactDetailsViewController?
+    
     private var viewModel: SplitViewModelProtocol!
     
     override func viewDidLoad() {
@@ -17,8 +22,22 @@ class SplitViewController: NSViewController {
         
         viewModel = SplitViewModel()
         viewModel.viewDidLoad()
+        
     }
-
-
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if let sourceViewController = segue.destinationController as? SourceViewController {
+            self.sourceViewController = sourceViewController
+        }
+        if let contactsViewController = segue.destinationController as? ContactsViewController {
+            self.contactsViewController = contactsViewController
+            self.contactsViewController.delegate = self
+        }
+    }
 }
 
+extension SplitViewController: ContactsViewControllerSplitProtocol {
+    func showDetails(for contact: Contact) {
+        
+    }
+}

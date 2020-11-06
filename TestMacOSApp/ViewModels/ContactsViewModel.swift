@@ -15,6 +15,8 @@ protocol ContactsViewModelProtocol {
     func loadMoreContacts()
     func numberOfContacts() -> Int
     func contact(for row: Int) -> Contact?
+    func contactCellStateModel(for row: Int) -> ContactTableCellStateModel?
+    func loadMoreCellStateModel() -> LoadMoreTableCellStateModel
 }
 
 protocol ContactsViewModelActionsProtocol: AnyObject {
@@ -48,10 +50,27 @@ class ContactsViewModel: ContactsViewModelProtocol {
     }
     
     func contact(for row: Int) -> Contact? {
-        guard row < contacts.count else {
+        guard row >= 0, row < contacts.count else {
             return nil
         }
         return contacts[row]
+    }
+    
+    func contactCellStateModel(for row: Int) -> ContactTableCellStateModel? {
+        guard let contact = contact(for: row) else {
+                return nil
+        }
+        
+        let stateModel = ContactTableCellStateModel(imageURL: contact.pictureInfo?.thumbnail, titleLabelText: contact.nameInfo?.full, subtitleLabelText: contact.email)
+        return stateModel
+    }
+    
+    func loadMoreCellStateModel() -> LoadMoreTableCellStateModel {
+        let stateModel = LoadMoreTableCellStateModel(loadMoreAction: {
+            self.loadMoreContacts()
+        })
+        
+        return stateModel
     }
 }
 

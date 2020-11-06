@@ -30,6 +30,11 @@
 		86812BED2551482D00DA799A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86812BEC2551482D00DA799A /* Assets.xcassets */; };
 		86812BF02551482E00DA799A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86812BEE2551482E00DA799A /* Main.storyboard */; };
 		86DDBFE12555463600F98028 /* LoadMoreTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDBFE02555463600F98028 /* LoadMoreTableCell.swift */; };
+		86DDBFE92555579400F98028 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDBFE42555579400F98028 /* Assets.swift */; };
+		86DDBFEA2555579400F98028 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDBFE52555579400F98028 /* StoryboardScenes.swift */; };
+		86DDBFEB2555579400F98028 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDBFE62555579400F98028 /* Strings.swift */; };
+		86DDBFED2555579400F98028 /* Configuration.yml in Resources */ = {isa = PBXBuildFile; fileRef = 86DDBFE82555579400F98028 /* Configuration.yml */; };
+		86DDBFEF255558AF00F98028 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86DDBFEE255558AF00F98028 /* Localizable.strings */; };
 		86EC66B42552B7FF00F6FCEB /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EC66B32552B7FF00F6FCEB /* ContactsRepository.swift */; };
 		86EC66BA2552BBBA00F6FCEB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EC66B92552BBBA00F6FCEB /* Contact.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +68,11 @@
 		86812BF12551482E00DA799A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86812BF22551482E00DA799A /* TestMacOSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestMacOSApp.entitlements; sourceTree = "<group>"; };
 		86DDBFE02555463600F98028 /* LoadMoreTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreTableCell.swift; sourceTree = "<group>"; };
+		86DDBFE42555579400F98028 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		86DDBFE52555579400F98028 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
+		86DDBFE62555579400F98028 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		86DDBFE82555579400F98028 /* Configuration.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = Configuration.yml; sourceTree = "<group>"; };
+		86DDBFEE255558AF00F98028 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		86EC66B32552B7FF00F6FCEB /* ContactsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
 		86EC66B92552BBBA00F6FCEB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BAA03B4F68442768C224DB9D /* Pods-TestMacOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMacOSApp.debug.xcconfig"; path = "Target Support Files/Pods-TestMacOSApp/Pods-TestMacOSApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,12 +223,25 @@
 				86EC66B22552B7EB00F6FCEB /* Repository */,
 				8652A8B125517143004CE5CC /* ViewModels */,
 				8652A8B025517008004CE5CC /* Screens */,
+				86DDBFE32555571800F98028 /* SwiftGen */,
 				86812BEC2551482D00DA799A /* Assets.xcassets */,
+				86DDBFEE255558AF00F98028 /* Localizable.strings */,
 				86812BEE2551482E00DA799A /* Main.storyboard */,
 				86812BF12551482E00DA799A /* Info.plist */,
 				86812BF22551482E00DA799A /* TestMacOSApp.entitlements */,
 			);
 			path = TestMacOSApp;
+			sourceTree = "<group>";
+		};
+		86DDBFE32555571800F98028 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				86DDBFE82555579400F98028 /* Configuration.yml */,
+				86DDBFE42555579400F98028 /* Assets.swift */,
+				86DDBFE52555579400F98028 /* StoryboardScenes.swift */,
+				86DDBFE62555579400F98028 /* Strings.swift */,
+			);
+			path = SwiftGen;
 			sourceTree = "<group>";
 		};
 		86EC66B22552B7EB00F6FCEB /* Repository */ = {
@@ -244,6 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86812BF52551482E00DA799A /* Build configuration list for PBXNativeTarget "TestMacOSApp" */;
 			buildPhases = (
+				86DDBFE2255556D600F98028 /* SwiftGen */,
 				6250C5BE92FE912F9938218A /* [CP] Check Pods Manifest.lock */,
 				86812BDE2551482A00DA799A /* Sources */,
 				86812BDF2551482A00DA799A /* Frameworks */,
@@ -301,6 +325,8 @@
 				867805EF2552B3BF0022A320 /* Split.storyboard in Resources */,
 				867805E62552B17F0022A320 /* ContactDetails.storyboard in Resources */,
 				867805E32552B1680022A320 /* Contacts.storyboard in Resources */,
+				86DDBFED2555579400F98028 /* Configuration.yml in Resources */,
+				86DDBFEF255558AF00F98028 /* Localizable.strings in Resources */,
 				86812BED2551482D00DA799A /* Assets.xcassets in Resources */,
 				86812BF02551482E00DA799A /* Main.storyboard in Resources */,
 			);
@@ -348,6 +374,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		86DDBFE2255556D600F98028 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which $PODS_ROOT/SwiftGen/bin/swiftgen >/dev/null; then\n    $PODS_ROOT/SwiftGen/bin/swiftgen config run --config \"$PROJECT_DIR/TestMacOSApp/SwiftGen/Configuration.yml\"\n    touch \"$PROJECT_DIR/TestMacOSApp/SwiftGen/Configuration.yml\"\nelse\n    echo \"SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -357,6 +401,7 @@
 			files = (
 				86EC66BA2552BBBA00F6FCEB /* Contact.swift in Sources */,
 				866B2BB92553402300460204 /* ContactsResponse.swift in Sources */,
+				86DDBFE92555579400F98028 /* Assets.swift in Sources */,
 				866B2BBC2553DBF600460204 /* ContactTableCell.swift in Sources */,
 				86DDBFE12555463600F98028 /* LoadMoreTableCell.swift in Sources */,
 				864923E8255314F100898EC4 /* RestApiRequestFactory.swift in Sources */,
@@ -367,12 +412,14 @@
 				864923E52553059B00898EC4 /* Constants.swift in Sources */,
 				8652A8B72551C1DF004CE5CC /* SourceViewModel.swift in Sources */,
 				86812BE62551482A00DA799A /* AppDelegate.swift in Sources */,
+				86DDBFEB2555579400F98028 /* Strings.swift in Sources */,
 				86EC66B42552B7FF00F6FCEB /* ContactsRepository.swift in Sources */,
 				8652A8BB2551D472004CE5CC /* ContactsViewModel.swift in Sources */,
 				8652A8B32551715B004CE5CC /* SplitViewModel.swift in Sources */,
 				8652A8B52551C1B6004CE5CC /* SourceViewController.swift in Sources */,
 				8652A8BD2551DF0E004CE5CC /* ContactDetailsViewController.swift in Sources */,
 				862D9B862553E3BC00973EC9 /* NSImageView+Ext.swift in Sources */,
+				86DDBFEA2555579400F98028 /* StoryboardScenes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
