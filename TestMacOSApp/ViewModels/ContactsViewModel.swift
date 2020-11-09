@@ -18,6 +18,8 @@ protocol ContactsViewModelProtocol {
     func contact(for row: Int) -> Contact?
     func contactCellStateModel(for row: Int) -> ContactTableCellStateModel?
     func loadMoreCellStateModel() -> LoadMoreTableCellStateModel
+    func collectionViewDidSelectCell(at index: Int)
+    func tableViewDidSelectCell(at index: Int)
 }
 
 protocol ContactsViewModelActionsProtocol: AnyObject {
@@ -25,6 +27,7 @@ protocol ContactsViewModelActionsProtocol: AnyObject {
     func handleError(message: String)
     func reloadData()
     func updateView(with mode: ContactsViewModel.Mode)
+    func showContactDetails(with contact: Contact)
 }
 
 class ContactsViewModel: ContactsViewModelProtocol {
@@ -83,6 +86,22 @@ class ContactsViewModel: ContactsViewModelProtocol {
         })
         
         return stateModel
+    }
+    
+    func collectionViewDidSelectCell(at index: Int) {
+        guard let contact = contact(for: index) else {
+            return
+        }
+        
+        delegate?.showContactDetails(with: contact)
+    }
+    
+    func tableViewDidSelectCell(at index: Int) {
+        guard let contact = contact(for: index) else {
+            return
+        }
+        
+        delegate?.showContactDetails(with: contact)
     }
 }
 

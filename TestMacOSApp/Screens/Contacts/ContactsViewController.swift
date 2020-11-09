@@ -34,11 +34,7 @@ class ContactsViewController: NSViewController {
     }
     
     @IBAction private func tableViewDidSelect(_ sender: Any) {
-        guard let contact = viewModel.contact(for: tableView.selectedRow) else {
-            return
-        }
-        
-        delegate?.showDetails(for: contact)
+        viewModel.tableViewDidSelectCell(at: tableView.selectedRow)
     }
 }
 
@@ -57,6 +53,10 @@ private extension ContactsViewController {
 }
 
 extension ContactsViewController: ContactsViewModelActionsProtocol {
+    func showContactDetails(with contact: Contact) {
+        delegate?.showDetails(for: contact)
+    }
+    
     func reloadData() {
         tableView.reloadData()
         collectionView.reloadData()
@@ -145,11 +145,11 @@ extension ContactsViewController: NSCollectionViewDataSource, NSCollectionViewDe
     }
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        guard let selectedIndex = indexPaths.first?.item, let contact = viewModel.contact(for: selectedIndex) else {
+        guard let selectedIndex = indexPaths.first?.item else {
             return
         }
         
-        delegate?.showDetails(for: contact)
+        viewModel.collectionViewDidSelectCell(at: selectedIndex)
     }
 }
 
