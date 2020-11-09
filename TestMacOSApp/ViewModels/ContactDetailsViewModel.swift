@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 protocol ContactDetailsViewModelProtocol {
     var delegate: ContactDetailsViewModelActionsProtocol? { get set }
@@ -33,7 +34,12 @@ class ContactDetailsViewModel: ContactDetailsViewModelProtocol {
     }
     
     func chatButtonPressed() {
+        guard let service = NSSharingService(named: NSSharingService.Name.composeEmail), let email = contact.email else {
+            return
+        }
+        service.recipients = [email]
         
+        service.perform(withItems: [])
     }
     
     private func contactsDetailsStateModel() -> ContactDetailsViewStateModel {
