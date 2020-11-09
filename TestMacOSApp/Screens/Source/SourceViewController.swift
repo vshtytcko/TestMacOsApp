@@ -9,10 +9,16 @@
 import Foundation
 import Cocoa
 
+protocol SourceViewSplitProtocol: class {
+    func tableButtonPressed()
+    func collectionButtonPressed()
+}
+
 class SourceViewController: NSViewController {
     @IBOutlet private weak var tableButton: NSButton!
     @IBOutlet private weak var collectionButton: NSButton!
     
+    weak var delegate: SourceViewSplitProtocol?
     private var viewModel: SourceViewModelProtocol!
     
     override func viewDidLoad() {
@@ -24,11 +30,11 @@ class SourceViewController: NSViewController {
     }
     
     @IBAction private func tableButtonPressed(_ sender: Any) {
-        viewModel.tableButtonPressed()
+        delegate?.tableButtonPressed()
     }
     
     @IBAction private func collectionButtonPressed(_ sender: Any) {
-        viewModel.collectionButtonPressed()
+        delegate?.collectionButtonPressed()
     }
 }
 
@@ -37,3 +43,4 @@ private extension SourceViewController {
         viewModel = SourceViewModel()
     }
 }
+

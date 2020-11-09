@@ -19,7 +19,7 @@
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zdv-de-nVg">
                                         <rect key="frame" x="154" y="130" width="52" height="15"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="location" id="jai-Pv-Ml0">
+                                        <textFieldCell key="cell" title="location" id="jai-Pv-Ml0">
                                             <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -51,7 +51,7 @@
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jZ5-Zu-P0K">
                                         <rect key="frame" x="154" y="153" width="47" height="15"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="gender" id="fG8-oy-QhJ">
+                                        <textFieldCell key="cell" alignment="left" title="gender" id="fG8-oy-QhJ">
                                             <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -90,7 +90,7 @@
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AXV-EG-YM6">
                                         <rect key="frame" x="154" y="107" width="35" height="15"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="email" id="hw7-oi-rDC">
+                                        <textFieldCell key="cell" title="email" id="hw7-oi-rDC">
                                             <font key="font" size="13" name="BasisGrotesquePro-Regular"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -118,6 +118,7 @@
                                 <constraints>
                                     <constraint firstItem="8gp-xR-fOx" firstAttribute="trailing" secondItem="lP7-Hi-GUS" secondAttribute="trailing" priority="900" id="0mN-no-jHj"/>
                                     <constraint firstItem="Zdv-de-nVg" firstAttribute="leading" secondItem="lAr-QI-f8T" secondAttribute="trailing" priority="900" constant="16" id="3at-iG-KbX"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zdv-de-nVg" secondAttribute="trailing" constant="8" id="3ip-Ao-hrY"/>
                                     <constraint firstItem="AXV-EG-YM6" firstAttribute="leading" secondItem="lP7-Hi-GUS" secondAttribute="trailing" priority="900" constant="16" id="4Bo-3U-0uQ"/>
                                     <constraint firstItem="gvc-3e-nEQ" firstAttribute="trailing" secondItem="W3y-Wd-kIw" secondAttribute="trailing" priority="900" id="7Ya-pb-96X"/>
                                     <constraint firstItem="gvc-3e-nEQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JcY-Th-Mus" secondAttribute="bottom" priority="900" constant="8" id="7mX-Ac-1gS"/>
@@ -127,9 +128,11 @@
                                     <constraint firstItem="W3y-Wd-kIw" firstAttribute="centerX" secondItem="XWM-KQ-Zkk" secondAttribute="centerX" priority="900" constant="-60" id="Oqz-sL-IQd"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fv0-Ef-hss" secondAttribute="bottom" priority="900" constant="16" id="QcP-kp-FUg"/>
                                     <constraint firstItem="lP7-Hi-GUS" firstAttribute="top" secondItem="Zdv-de-nVg" secondAttribute="bottom" priority="900" constant="8" id="Rvc-7E-8du"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AXV-EG-YM6" secondAttribute="trailing" constant="8" id="Sdh-IX-hgz"/>
                                     <constraint firstItem="gvc-3e-nEQ" firstAttribute="top" secondItem="W3y-Wd-kIw" secondAttribute="bottom" priority="100" constant="16" id="Uni-4C-lci"/>
                                     <constraint firstItem="Zdv-de-nVg" firstAttribute="top" secondItem="jZ5-Zu-P0K" secondAttribute="bottom" priority="900" constant="8" id="WVV-vA-Yms"/>
                                     <constraint firstItem="W3y-Wd-kIw" firstAttribute="top" secondItem="XWM-KQ-Zkk" secondAttribute="top" priority="900" constant="16" id="aBn-Wo-aRJ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jZ5-Zu-P0K" secondAttribute="trailing" constant="8" id="cXF-9y-Rwt"/>
                                     <constraint firstItem="3L5-96-bdp" firstAttribute="leading" secondItem="W3y-Wd-kIw" secondAttribute="trailing" priority="900" constant="16" id="eBf-Ks-B3a"/>
                                     <constraint firstItem="lAr-QI-f8T" firstAttribute="top" secondItem="jZ5-Zu-P0K" secondAttribute="bottom" priority="900" constant="8" id="fkA-3U-LiH"/>
                                     <constraint firstAttribute="trailing" secondItem="3L5-96-bdp" secondAttribute="trailing" priority="900" constant="8" id="fnb-NR-K1D"/>

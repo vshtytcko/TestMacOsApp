@@ -10,20 +10,10 @@ import Foundation
 
 protocol SourceViewModelProtocol {
     func viewDidLoad()
-    func tableButtonPressed()
-    func collectionButtonPressed()
 }
 
 class SourceViewModel: SourceViewModelProtocol {
     func viewDidLoad() {
-        
-    }
-    
-    func tableButtonPressed() {
-        
-    }
-    
-    func collectionButtonPressed() {
         
     }
 }

@@ -18,9 +18,11 @@ class ContactsViewController: NSViewController {
     @IBOutlet private weak var tableView: NSTableView!
     @IBOutlet private weak var activityIndicator: CircularProgress!
     @IBOutlet private weak var collectionView: NSCollectionView!
+    @IBOutlet private weak var collectionViewContainer: NSView!
+    @IBOutlet private weak var tableViewContainer: NSView!
     
     weak var delegate: ContactsViewControllerSplitProtocol?
-    private var viewModel: ContactsViewModelProtocol!
+    var viewModel: ContactsViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,22 @@ private extension ContactsViewController {
 }
 
 extension ContactsViewController: ContactsViewModelActionsProtocol {
+    func reloadData() {
+        tableView.reloadData()
+        collectionView.reloadData()
+    }
+    
+    func updateView(with mode: ContactsViewModel.Mode) {
+        switch mode {
+        case .table:
+            tableViewContainer.isHidden = false
+            collectionViewContainer.isHidden = true
+        case .collection:
+            tableViewContainer.isHidden = true
+            collectionViewContainer.isHidden = false
+        }
+    }
+    
     func updateLoadingState(_ isLoading: Bool) {
         activityIndicator.isHidden = !isLoading
     }
@@ -67,11 +85,6 @@ extension ContactsViewController: ContactsViewModelActionsProtocol {
         if let window = view.window {
             alert.beginSheetModal(for: window, completionHandler: nil)
         }
-    }
-    
-    func reloadTableView() {
-        tableView.reloadData()
-        collectionView.reloadData()
     }
 }
 
@@ -132,7 +145,6 @@ extension ContactsViewController: NSCollectionViewDataSource, NSCollectionViewDe
     }
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        
         guard let selectedIndex = indexPaths.first?.item, let contact = viewModel.contact(for: selectedIndex) else {
             return
         }

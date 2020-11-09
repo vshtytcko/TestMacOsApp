@@ -28,6 +28,7 @@ class SplitViewController: NSViewController, NSSplitViewDelegate {
         super.prepare(for: segue, sender: sender)
         if let sourceViewController = segue.destinationController as? SourceViewController {
             self.sourceViewController = sourceViewController
+            self.sourceViewController.delegate = self
         }
         if let contactsViewController = segue.destinationController as? ContactsViewController {
             self.contactsViewController = contactsViewController
@@ -46,5 +47,15 @@ extension SplitViewController: ContactsViewControllerSplitProtocol {
         contactDetailsViewController = contactDetailsVC
         
         splitView.addArrangedSubview(contactDetailsVC.view)
+    }
+}
+
+extension SplitViewController: SourceViewSplitProtocol {
+    func tableButtonPressed() {
+        contactsViewController.viewModel.mode = .table
+    }
+    
+    func collectionButtonPressed() {
+        contactsViewController.viewModel.mode = .collection
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 protocol ContactsViewModelProtocol {
     var delegate: ContactsViewModelActionsProtocol? {get set}
+    var mode: ContactsViewModel.Mode {get set}
     
     func viewDidLoad()
     func loadMoreContacts()
@@ -22,11 +23,22 @@ protocol ContactsViewModelProtocol {
 protocol ContactsViewModelActionsProtocol: AnyObject {
     func updateLoadingState(_ isLoading: Bool)
     func handleError(message: String)
-    func reloadTableView()
+    func reloadData()
+    func updateView(with mode: ContactsViewModel.Mode)
 }
 
 class ContactsViewModel: ContactsViewModelProtocol {
+    enum Mode {
+        case table, collection
+    }
+    
     weak var delegate: ContactsViewModelActionsProtocol?
+    
+    var mode: Mode = .table {
+        didSet {
+            delegate?.updateView(with: self.mode)
+        }
+    }
     
     private var repository: ContactsRepositoryProtocol
     private var page: Int = 0
@@ -104,7 +116,7 @@ private extension ContactsViewModel {
             self.page += 1
             self.contacts.append(contentsOf: contacts)
             
-            self.delegate?.reloadTableView()
+            self.delegate?.reloadData()
         }
     }
 }

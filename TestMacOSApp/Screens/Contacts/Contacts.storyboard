@@ -23,7 +23,7 @@
                                         <collectionView selectable="YES" id="1uf-IM-M9a">
                                             <rect key="frame" x="0.0" y="0.0" width="579" height="158"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfRows="5" maximumNumberOfColumns="1" id="E4P-OK-jWJ">
+                                            <collectionViewGridLayout key="collectionViewLayout" id="E4P-OK-jWJ">
                                                 <size key="minimumItemSize" width="200" height="150"/>
                                                 <size key="maximumItemSize" width="200" height="150"/>
                                             </collectionViewGridLayout>
@@ -44,7 +44,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <scrollView hidden="YES" misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="112" horizontalPageScroll="10" verticalLineScroll="112" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-OV-jDf">
+                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="112" horizontalPageScroll="10" verticalLineScroll="112" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-OV-jDf">
                                 <rect key="frame" x="-1" y="-1" width="581" height="380"/>
                                 <clipView key="contentView" id="CVu-0j-Ou9">
                                     <rect key="frame" x="1" y="1" width="579" height="378"/>
@@ -198,7 +198,9 @@
                     <connections>
                         <outlet property="activityIndicator" destination="G5f-mG-AIn" id="wc1-yv-eUo"/>
                         <outlet property="collectionView" destination="1uf-IM-M9a" id="q38-RI-L7p"/>
+                        <outlet property="collectionViewContainer" destination="brl-EI-trH" id="Bij-cZ-XY0"/>
                         <outlet property="tableView" destination="lwa-Cq-XVI" id="fPF-Ah-XB7"/>
+                        <outlet property="tableViewContainer" destination="3E7-OV-jDf" id="oMK-Ux-hoX"/>
                     </connections>
                 </viewController>
                 <customObject id="6EX-o7-OVN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
