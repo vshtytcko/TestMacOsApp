@@ -141,3 +141,21 @@ class Contact:  Codable {
         }
     }
 }
+
+extension Array where Element: Contact {
+    func filterWithSearchWord(_ word: String) -> [Contact] {
+        guard !word.isEmpty else {
+            return self
+        }
+        
+        let filteredContacts = filter { (contact) -> Bool in
+            guard let name = contact.nameInfo?.full.lowercased() else {
+                return true
+            }
+            
+            return name.contains(word)
+        }
+        
+        return filteredContacts
+    }
+}

@@ -15,11 +15,11 @@ protocol ContactsViewModelProtocol {
     func viewDidLoad()
     func loadMoreContacts()
     func numberOfContacts() -> Int
-    func contact(for row: Int) -> Contact?
     func contactCellStateModel(for row: Int) -> ContactTableCellStateModel?
     func loadMoreCellStateModel() -> LoadMoreTableCellStateModel
     func collectionViewDidSelectCell(at index: Int)
     func tableViewDidSelectCell(at index: Int)
+    func searchDidUpdateWord(searchWord: String)
 }
 
 protocol ContactsViewModelActionsProtocol: AnyObject {
@@ -46,6 +46,7 @@ class ContactsViewModel: ContactsViewModelProtocol {
     private var repository: ContactsRepositoryProtocol
     private var page: Int = 0
     private var shouldLoadMore: Bool = true
+    private var searchWord: String = ""
     private var contacts: [Contact] = []
     
     init() {
@@ -61,14 +62,14 @@ class ContactsViewModel: ContactsViewModelProtocol {
     }
     
     func numberOfContacts() -> Int {
-        return contacts.count
+        return contacts.filterWithSearchWord(searchWord).count
     }
     
     func contact(for row: Int) -> Contact? {
-        guard row >= 0, row < contacts.count else {
+        guard row >= 0, row < contacts.filterWithSearchWord(searchWord).count else {
             return nil
         }
-        return contacts[row]
+        return contacts.filterWithSearchWord(searchWord)[row]
     }
     
     func contactCellStateModel(for row: Int) -> ContactTableCellStateModel? {
@@ -102,6 +103,11 @@ class ContactsViewModel: ContactsViewModelProtocol {
         }
         
         delegate?.showContactDetails(with: contact)
+    }
+    
+    func searchDidUpdateWord(searchWord: String) {
+        self.searchWord = searchWord
+        delegate?.reloadData()
     }
 }
 

@@ -20,6 +20,7 @@ class ContactsViewController: NSViewController {
     @IBOutlet private weak var collectionView: NSCollectionView!
     @IBOutlet private weak var collectionViewContainer: NSView!
     @IBOutlet private weak var tableViewContainer: NSView!
+    @IBOutlet weak var searchField: NSSearchField!
     
     weak var delegate: ContactsViewControllerSplitProtocol?
     var viewModel: ContactsViewModelProtocol!
@@ -153,4 +154,12 @@ extension ContactsViewController: NSCollectionViewDataSource, NSCollectionViewDe
     }
 }
 
-
+extension ContactsViewController: NSSearchFieldDelegate {
+    func controlTextDidChange(_ obj: Notification) {
+        guard let word = (obj.object as? NSSearchField)?.stringValue else {
+            return
+        }
+        
+        viewModel.searchDidUpdateWord(searchWord: word)
+    }
+}
